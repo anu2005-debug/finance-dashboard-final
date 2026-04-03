@@ -1,7 +1,1 @@
-# Finance Dashboard App
-
-Build A MERN Finance Dashboard App
-
-Video: https://www.youtube.com/watch?v=uoJ0Tv-BFcQ
-
-For all related questions and discussions about this project, check out the discord: https://discord.gg/2FfPeEk2mX
+This project is independently implemented and enhanced as part of an assignment. It includes backend APIs, role-based access control, and financial dashboard features.
