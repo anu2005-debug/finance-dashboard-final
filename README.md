@@ -93,7 +93,7 @@ finance-app/
 
 ### 1️⃣ Clone Repository
 
-git clone https://github.com/anu2005-debug/finance-dashboard-backend.git
+git clone https://github.com/anu2005-debug/finance-dashboard-final.git
 
 cd finance-app
 
