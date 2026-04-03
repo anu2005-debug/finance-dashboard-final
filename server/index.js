@@ -9,7 +9,7 @@ import kpiRoutes from "./routes/kpi.js";
 import productRoutes from "./routes/product.js";
 import transactionRoutes from "./routes/transaction.js";
 
-/* 🔥 ADDED */
+/* ADDED */
 import userRoutes from "./routes/userRoutes.js";
 import dashboardRoutes from "./routes/dashboard.js";
 
@@ -21,6 +21,7 @@ import { kpis, products, transactions } from "./data/data.js";
 /* CONFIGURATIONS */
 dotenv.config();
 const app = express();
+
 app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
@@ -34,24 +35,19 @@ app.use("/kpi", kpiRoutes);
 app.use("/product", productRoutes);
 app.use("/transaction", transactionRoutes);
 
-/* 🔥 ADDED ROUTES */
+/* ADDED ROUTES */
 app.use("/api/users", userRoutes);
 app.use("/dashboard", dashboardRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 9000;
+
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(async () => {
-    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-
-    
-     await mongoose.connection.db.dropDatabase();
-     KPI.insertMany(kpis);
-     Product.insertMany(products);
-     Transaction.insertMany(transactions);
+  .then(() => {
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
   })
   .catch((error) => console.log(`${error} did not connect`));
