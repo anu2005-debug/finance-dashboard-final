@@ -1,16 +1,24 @@
 {
   "name": "server",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Finance dashboard backend server",
   "main": "index.js",
   "type": "module",
   "scripts": {
-  "dev": "nodemon index.js",
-  "start": "node index.js"
-},
-  "keywords": [],
-  "author": "",
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "start:prod": "NODE_ENV=production node index.js"
+  },
+  "keywords": ["backend", "express", "mongodb", "finance"],
+  "author": "Anushka",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anu2005-debug/finance-dashboard-backend.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
